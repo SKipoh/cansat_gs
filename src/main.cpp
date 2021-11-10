@@ -1,7 +1,9 @@
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 
-SoftwareSerial apc(6, 7); // RX, TX
+SoftwareSerial apc(10, 11); // RX, TX
+
+int stopBytes = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -12,5 +14,11 @@ void setup() {
 void loop() {
   if (apc.available()) {
     Serial.write(apc.read());
+  }
+
+  if (Serial.available()) {
+    stopBytes = Serial.read();
+    apc.write(stopBytes);
+    Serial.write(stopBytes);
   }
 }
