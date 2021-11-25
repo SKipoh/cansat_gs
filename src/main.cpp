@@ -9,6 +9,7 @@ void setup() {
   Serial.begin(9600);
 
   apc.begin(9600);
+  Serial.println("CANsat Ground Station Ready!");
 }
 
 void loop() {
@@ -22,3 +23,22 @@ void loop() {
     Serial.write(stopBytes);
   }
 }
+
+
+// IF USING ARDUINO DUE:
+// void setup() {
+//   Serial.begin(9600);
+//   Serial2.begin(9600);
+
+// }
+
+// void loop() {
+//   if (Serial2.available()) {
+//     Serial.write(Serial2.read());
+//   }
+
+//   if (Serial.available()) {
+//     Serial2.write(Serial.read());
+//   }
+  
+// }
