@@ -9,7 +9,7 @@ void setup() {
   Serial.begin(9600);
 
   apc.begin(9600);
-  Serial.println("CANsat Ground Station Ready!");
+  //Serial.println("CANsat Ground Station Ready!");
 }
 
 void loop() {
