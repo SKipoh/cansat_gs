@@ -6,10 +6,10 @@ SoftwareSerial apc(10, 11); // RX, TX
 int stopBytes = 0;
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(2400);
 
-  apc.begin(9600);
-  //Serial.println("CANsat Ground Station Ready!");
+  apc.begin(2400);
+  Serial.println("CANsat Ground Station Ready!");
 }
 
 void loop() {
